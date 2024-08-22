@@ -13,7 +13,7 @@ body {
 }
 
 .container {
-  max-width: 1100px;
+  max-width: 90%;
   margin: 0 auto; /* top-bottom: 0, left-right: auto */
 }
 
@@ -53,6 +53,12 @@ header {
   }
 }
 
+@media screen and (max-width: 400px) {
+  .weird-hidden {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 720px) {
   .sm-hidden {
     display: none;
@@ -61,7 +67,12 @@ header {
 
 // MARK: Main
 main {
-  background: orange;
+  background: {
+    image: url(../images/background.webp);
+    size: contain;
+    repeat: no-repeat;
+    position: 70vw;
+  }
 
   .container {
     min-height: 80vh;
@@ -75,7 +86,7 @@ main {
   h1 {
     font: {
       family: "GT Super", serif;
-      size: 110px;
+      size: calc(10vw + 10px);
       weight: 400;
     }
 
@@ -92,10 +103,35 @@ main {
   }
 }
 
+// MARK: Footer
+footer {
+  padding: 20px;
+  border-top: 1px solid black;
+
+  nav {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
+}
+
 @media screen and (max-width: 900px) {
   main {
     .btn {
       background: #1a8917;
+    }
+  }
+
+  footer {
+    background: black;
+    color: white;
+
+    nav {
+      justify-content: start;
+    }
+
+    .lg-hidden {
+      display: none;
     }
   }
 }

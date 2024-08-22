@@ -18,7 +18,7 @@ body {
 }
 
 .container {
-  max-width: 1100px;
+  max-width: 90%;
   margin: 0 auto; /* top-bottom: 0, left-right: auto */
 }
 
@@ -54,13 +54,21 @@ header nav {
   align-items: center;
 }
 
+@media screen and (max-width: 400px) {
+  .weird-hidden {
+    display: none;
+  }
+}
 @media screen and (max-width: 720px) {
   .sm-hidden {
     display: none;
   }
 }
 main {
-  background: orange;
+  background-image: url(../images/background.webp);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 70vw;
 }
 main .container {
   min-height: 80vh;
@@ -72,7 +80,7 @@ main .container {
 }
 main h1 {
   font-family: "GT Super", serif;
-  font-size: 110px;
+  font-size: calc(10vw + 10px);
   font-weight: 400;
   letter-spacing: -3px;
   line-height: 0.9;
@@ -84,9 +92,29 @@ main .btn {
   font-size: 22px;
 }
 
+footer {
+  padding: 20px;
+  border-top: 1px solid black;
+}
+footer nav {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
 @media screen and (max-width: 900px) {
   main .btn {
     background: #1a8917;
+  }
+  footer {
+    background: black;
+    color: white;
+  }
+  footer nav {
+    justify-content: start;
+  }
+  footer .lg-hidden {
+    display: none;
   }
 }
 
