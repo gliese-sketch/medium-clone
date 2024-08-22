@@ -25,8 +25,9 @@ a {
 .btn {
   background: black;
   padding: 8px 16px;
-  border-radius: 20px;
   color: white;
+  border: none;
+  border-radius: 20px;
 }
 
 // MARK: Header
@@ -60,9 +61,41 @@ header {
 
 // MARK: Main
 main {
-  min-height: 80vh;
+  background: orange;
+
+  .container {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 40px;
+  }
 
   h1 {
-    font-family: "GT Super", serif;
+    font: {
+      family: "GT Super", serif;
+      size: 110px;
+      weight: 400;
+    }
+
+    letter-spacing: -3px;
+    line-height: 0.9;
+  }
+
+  p {
+    font-size: 22px;
+  }
+
+  .btn {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  main {
+    .btn {
+      background: #1a8917;
+    }
   }
 }
